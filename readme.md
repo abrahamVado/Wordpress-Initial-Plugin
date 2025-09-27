@@ -1,15 +1,17 @@
-=== Demo Plugin ===
-Contributors: abrahamgomez  
-Requires at least: 6.4  
-Tested up to: 6.6  
-Requires PHP: 8.2  
-Stable tag: 1.0.0  
-License: GPLv3  
-License URI: http://www.gnu.org/licenses/gpl-3.0.txt  
+
+# Demo Plugin
+
+**Contributors:** abrahamgomez  
+**Requires at least:** 6.4  
+**Tested up to:** 6.6  
+**Requires PHP:** 8.2  
+**Stable tag:** 1.0.0  
+**License:** GPLv3  
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.txt  
 
 A minimal, production-ready scaffolding for a WordPress plugin with PSR-4 autoloading, a sample CPT, and OAuth-only REST routes.
 
-== Description ==
+## Description
 
 This is a clean starting point for building modern WordPress plugins. Features include:
 
@@ -22,7 +24,7 @@ Useful as a base for more complex plugin development without extra boilerplate.
 
 ---
 
-### 🗂 File Structure
+### File Structure
 
 ```text
 demo-plugin/
@@ -43,20 +45,30 @@ demo-plugin/
 
 ---
 
-### 🔗 Architecture Diagram
+### Architecture Diagram (Mermaid)
+
+> GitHub sometimes fails if lines are implicitly wrapped.  
+> This version uses explicit node IDs and semicolons—copy/paste exactly as-is.
 
 ```mermaid
 flowchart TD
-    A[WordPress Core] -->|Hooks & Filters| B[Demo Plugin]
-    B --> C[Custom Post Type: demo-plugin]
-    B --> D[Admin Page (jQuery-only)]
-    B --> E[REST API: /demo-plugin/v1]
-    E --> F[OAuth Routes]
+  WP[WordPress Core];
+  PLG[Demo Plugin];
+  CPT[Custom Post Type: demo-plugin];
+  ADM[Admin Page - jQuery only];
+  API[REST API: /demo-plugin/v1];
+  OAUTH[OAuth Routes];
+
+  WP -->|hooks & filters| PLG;
+  PLG --> CPT;
+  PLG --> ADM;
+  PLG --> API;
+  API --> OAUTH;
 ```
 
 ---
 
-== Installation ==
+## Installation
 
 1. Upload the plugin folder to `/wp-content/plugins/`.  
 2. Run `composer install` inside the plugin folder.  
@@ -64,7 +76,7 @@ flowchart TD
 
 ---
 
-== Changelog ==
+## Changelog
 
-= 1.0.0 =  
+### 1.0.0
 * Initial release with CPT, admin page stub, and OAuth REST routes.
