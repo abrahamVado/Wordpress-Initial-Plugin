@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset name="Demo Plugin WPCS">
+  <!-- #1 Standard: WordPress Coding Standards -->
+  <rule ref="WordPress-Core"/>
+  <rule ref="WordPress-Docs"/>
+  <rule ref="WordPress-Extra"/>
+  <config name="testVersion" value="8.2-"/>
+  <!-- #2 Paths -->
+  <file>init.php</file>
+  <file>includes</file>
+  <file>assets</file>
+  <!-- #3 Exclude vendor -->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>
